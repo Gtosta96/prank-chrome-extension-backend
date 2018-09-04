@@ -1,0 +1,15 @@
+{
+  "extends": ["eslint:recommended", "google"],
+  "rules": {
+    "linebreak-style": ["error", "windows"],
+    "object-curly-spacing": ["error", "always"],
+    "require-jsdoc": "off",
+    "new-cap": "off"
+  },
+  "env": {
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
+  }
+}
