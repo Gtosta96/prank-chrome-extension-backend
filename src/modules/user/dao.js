@@ -18,7 +18,7 @@ const Users = require('./model');
       last_name: user.last_name,
     };
 
-    return user.findByIdAndUpdate(id, updatedUser, { new: true });
+    return Users.findByIdAndUpdate(id, updatedUser, { new: true });
   };
 
   const remove = ({ id }) => {
