@@ -1,15 +1,15 @@
-const Users = require('./model');
+const UsersModel = require('./model');
 
   const getAll = () => {
-    return Users.find();
+    return UsersModel.find();
   };
 
   const getById = ({ id }) => {
-    return Users.findById(id);
+    return UsersModel.findById(id);
   };
 
   const create = ({ user }) => {
-    return Users.create(user);
+    return UsersModel.create(user);
   };
 
   const update = ({ id, user }) => {
@@ -18,11 +18,11 @@ const Users = require('./model');
       last_name: user.last_name,
     };
 
-    return Users.findByIdAndUpdate(id, updatedUser, { new: true });
+    return UsersModel.findByIdAndUpdate(id, updatedUser, { new: true });
   };
 
   const remove = ({ id }) => {
-    return Users.findByIdAndRemove(id);
+    return UsersModel.findByIdAndRemove(id);
   };
 
   module.exports = {
