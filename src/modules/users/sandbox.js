@@ -6,30 +6,30 @@ const fetch = require('node-fetch');
 
   /* -- */
 
-  const getUserById = await fetch('http://localhost:3000/user/1');
+  const getUserById = await fetch('http://localhost:3000/user/:id');
   await getUserById.json();
 
   /* -- */
 
   const postUser = await fetch('http://localhost:3000/user', {
     method: 'POST',
-    body: JSON.stringify({ first_name: 'First', last_name: 'Last' }),
+    body: JSON.stringify({ email: 'gabrieltosta3@gmail.com', first_name: 'Gabriel', last_name: 'Tosta' }),
     headers: { 'Content-Type': 'application/json' },
   });
   await postUser.json();
 
   /* -- */
 
-  const putUser = await fetch('http://localhost:3000/user/1', {
+  const putUser = await fetch('http://localhost:3000/user/:id', {
     method: 'put',
-    body: JSON.stringify({ userData: true }),
+    body: JSON.stringify({ email: 'gabrieltosta3@gmail.com', first_name: 'Gabriel', last_name: 'Tosta' }),
     headers: { 'Content-Type': 'application/json' },
   });
   await putUser.json();
 
   /* -- */
 
-  const deleteUser = await fetch('http://localhost:3000/user/1', {
+  const deleteUser = await fetch('http://localhost:3000/user/:id', {
     method: 'delete',
   });
   await deleteUser.json();
