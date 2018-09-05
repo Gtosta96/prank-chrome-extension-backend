@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 (async () => {
-  const getUser = await fetch('http://localhost:3000/user');
+  const getUser = await fetch('http://localhost:3000/users');
   await getUser.json();
 
   /* -- */
@@ -13,7 +13,7 @@ const fetch = require('node-fetch');
 
   const postUser = await fetch('http://localhost:3000/user', {
     method: 'POST',
-    body: JSON.stringify({ userData: true }),
+    body: JSON.stringify({ first_name: 'First', last_name: 'Last' }),
     headers: { 'Content-Type': 'application/json' },
   });
   await postUser.json();

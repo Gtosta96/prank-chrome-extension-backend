@@ -7,17 +7,26 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const configureRoutes = require('./src/modules');
+const database = require('./src/database/database');
 
 const app = express();
 
-app.use(logger('dev'));
+(async () => {
+  try {
+    app.use(logger('dev'));
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: false }));
 
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+    app.use(cookieParser());
+    app.use(express.static(path.join(__dirname, 'public')));
 
-configureRoutes(app); // configure all routes
+
+    configureRoutes(app); // configure all routes
+    database.connect(); // throwable
+  } catch (e) {
+    throw e;
+  }
+})();
 
 module.exports = app;

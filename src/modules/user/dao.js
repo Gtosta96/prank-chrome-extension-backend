@@ -1,29 +1,28 @@
-const User = require('./model');
+const Users = require('./model');
 
   const getAll = () => {
-    return User.find();
+    return Users.find();
   };
 
   const getById = ({ id }) => {
-    return User.findById(id);
+    return Users.findById(id);
   };
 
   const create = ({ user }) => {
-    return User.create(user);
+    return Users.create(user);
   };
 
   const update = ({ id, user }) => {
     const updatedUser = {
-      name: user.name,
-      mail: user.mail,
-      role: user.role,
+      first_name: user.first_name,
+      last_name: user.last_name,
     };
 
     return user.findByIdAndUpdate(id, updatedUser, { new: true });
   };
 
   const remove = ({ id }) => {
-    return User.findByIdAndRemove(id);
+    return Users.findByIdAndRemove(id);
   };
 
   module.exports = {
