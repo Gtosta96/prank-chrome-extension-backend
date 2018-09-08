@@ -18,6 +18,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 try {
+  app.socketIO = server.getSocketIO(); // app.socketIO is used on bin/www
   server.start(app);
 } catch (e) {
   throw e;

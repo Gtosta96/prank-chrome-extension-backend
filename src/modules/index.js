@@ -6,4 +6,4 @@ const configureRoutes = (app) => {
   app.use(users);
 };
 
-module.exports = configureRoutes;
+module.exports = { configureRoutes };
