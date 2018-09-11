@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const DefaultSchema = require('../shared/schemas/DefaultSchema');
 const validators = require('../../helpers/validators/validators');
 
-mongoose.set('useCreateIndex', true);
 const schema = new DefaultSchema({
     email: {
       type: String,
