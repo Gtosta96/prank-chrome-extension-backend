@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const DefaultSchema = require('../shared/schemas/DefaultSchema');
-const validators = require('../../helpers/validators/validators');
+const DefaultSchema = require('../../shared/schemas/DefaultSchema');
+const validators = require('../../../helpers/validators/validators');
 
 const schema = new DefaultSchema({
     email: {

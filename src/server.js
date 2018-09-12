@@ -1,15 +1,11 @@
-const modules = require('./modules');
+const modules = require('./modules/modules');
 const database = require('./database/database');
 
-const io = require('./socketIO');
+const start = (app, io) => {
+  modules.configureAPI(app);
+  modules.configureWS(io);
 
-const getSocketIO = () => {
-  return io;
+  database.connect(); // throwable
 };
 
-const start = async (app) => {
-  modules.configureRoutes(app); // configure all routes
-  await database.connect(); // throwable
-};
-
-module.exports = { getSocketIO, start };
+module.exports = { start };
