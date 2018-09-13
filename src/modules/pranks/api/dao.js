@@ -13,13 +13,7 @@ const PranksModel = require('./model');
   };
 
   const update = ({ id, prank }) => {
-    const updatedPrank = {
-      html: prank.html,
-      css: prank.css,
-      urls: prank.urls,
-    };
-
-    return PranksModel.findByIdAndUpdate(id, updatedPrank, { new: true });
+    return PranksModel.findByIdAndUpdate(id, prank, { new: true });
   };
 
   const remove = ({ id }) => {

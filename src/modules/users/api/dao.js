@@ -13,12 +13,7 @@ const UsersModel = require('./model');
   };
 
   const update = ({ id, user }) => {
-    const updatedUser = {
-      first_name: user.first_name,
-      last_name: user.last_name,
-    };
-
-    return UsersModel.findByIdAndUpdate(id, updatedUser, { new: true });
+    return UsersModel.findByIdAndUpdate(id, user, { new: true });
   };
 
   const remove = ({ id }) => {

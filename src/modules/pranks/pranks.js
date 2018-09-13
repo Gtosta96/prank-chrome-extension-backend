@@ -1,9 +1,9 @@
 const api = require('./api/router');
 
-const connection = require('./ws/connection');
+const update = require('./ws/update');
 
-const ws = (io) => {
-  connection(io);
+const ws = (io, socket) => {
+  update(io, socket);
 };
 
 module.exports = { api, ws };

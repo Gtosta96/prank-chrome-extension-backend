@@ -3,12 +3,12 @@ const router = require('express').Router();
 const usersController = require('./controller');
 
 router.get('/users', usersController.get);
-router.get('/user/:id', usersController.getById);
+router.get('/users/:id', usersController.getById);
 
-router.post('/user', usersController.post);
+router.post('/users', usersController.post);
 
-router.put('/user/:id', usersController.put);
+router.put('/users/:id', usersController.put);
 
-router.delete('/user/:id', usersController.remove);
+router.delete('/users/:id', usersController.remove);
 
 module.exports = router;
