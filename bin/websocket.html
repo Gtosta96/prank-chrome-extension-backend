@@ -1,0 +1,19 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+
+<script>
+  const socket = io('http://localhost:3000');
+
+  socket.on('connect', (...args) => {
+    console.log('SOCKET_OI connected', args);
+  });
+
+  socket.on('event', (...args) => {
+    console.log('SOCKET_OI event', args);
+  });
+
+  socket.on('disconnect', (...args) => {
+    console.log('SOCKET_OI disconnected', args);
+  });
+
+  window.socket = socket;
+</script>
