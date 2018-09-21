@@ -3,9 +3,7 @@ const users = require('./users/users');
 const pranks = require('./pranks/pranks');
 
 const configureWS = (io) => {
-  io.on('connection', (socket) => {
-    console.log('A user connected');
-
+  io.on('connect', (socket) => {
     pranks.ws(io, socket);
   });
 };

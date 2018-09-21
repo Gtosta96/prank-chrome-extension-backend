@@ -7,6 +7,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+const cors = require('cors');
+
 const server = require('./src/server');
 
 const app = express();
@@ -14,6 +16,7 @@ const io = socketIO();
 
 app.use(logger('dev'));
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
